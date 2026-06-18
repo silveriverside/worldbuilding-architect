@@ -1,0 +1,24 @@
+{
+  "name": "worldbuilding-architect",
+  "owner": {
+    "name": "silveriverside",
+    "email": "silveriverside@users.noreply.github.com"
+  },
+  "metadata": {
+    "description": "Worldbuilding Architect — grow deep, internally-consistent fictional worlds as a living text codex."
+  },
+  "plugins": [
+    {
+      "name": "worldbuilding-architect",
+      "source": "./",
+      "description": "Build and grow deep, internally-consistent fictional worlds (settings/lore/世界观) as a persistent, ever-expanding text codex: emergent history, names with real provenance, POV-relative geography, multi-worldline (time travel / branching / 收束).",
+      "version": "1.0.0",
+      "category": "productivity",
+      "license": "MIT",
+      "keywords": ["worldbuilding", "lore", "fiction", "sci-fi", "game-design", "narrative", "codex", "世界观"],
+      "author": {
+        "name": "silveriverside"
+      }
+    }
+  ]
+}
