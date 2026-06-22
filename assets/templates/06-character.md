@@ -1,3 +1,18 @@
+<!-- VIEW SKELETON (optional): minimal fields for scripts/build_views.py to draw
+     the character network. Use other characters' ids in `to:` for internal edges;
+     any other name renders as an external node. Delete this block to opt out.
+---
+id: {{slug}}
+type: character
+name: "{{NAME}}"
+affiliation: ["{{faction-id or group}}"]
+relations:
+  - to: {{other-character-id-or-name}}
+    type: {{对手/血缘/任职/盟友…}}
+lines: ["{{storyline}}"]
+---
+-->
+
 # Character — {{NAME}}
 
 > Actors who carry the storylines. Tie them to factions, events, and lines they cross.

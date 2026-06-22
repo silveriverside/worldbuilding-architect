@@ -19,6 +19,15 @@ undercurrents — see `09-undercurrents.md`.)*
 ## Era file template (copy into `era-NN-slug.md`)
 
 ```
+---
+id: era-NN
+type: era
+name: "{{ERA_NAME}}"
+order: NN
+span_start: "{{start}}"
+span_end: "{{end}}"
+tipping_points: ["{{qualitative leap}}"]
+---
 # Era NN — {{ERA_NAME}}  ({{SPAN}})
 
 ## Feel of the age

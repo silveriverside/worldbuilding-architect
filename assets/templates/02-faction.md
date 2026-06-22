@@ -1,3 +1,17 @@
+<!-- VIEW SKELETON (optional): the minimal machine-readable fields that let
+     scripts/build_views.py draw the faction graph. Narrative stays in the body.
+     Delete this block if you don't want generated views.
+---
+id: {{slug}}
+type: faction
+name: "{{FACTION_NAME}}"
+born_from: "{{founding event}}"
+rivals: ["{{other-faction-id}}"]
+sponsor: "{{patron / bound institution, optional}}"
+splits_risk: "{{the fault line that could crack it, optional}}"
+---
+-->
+
 # Faction — {{FACTION_NAME}}
 
 > Build the history first; the faction is what's left standing. See `references/factions-from-history.md`.
