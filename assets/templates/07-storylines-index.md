@@ -28,3 +28,13 @@ fingerprints on the open line. Revealed in turns; the reveal reframes earlier ev
 
 > Branches must lead to *different worlds*, not different scores; root them in faction disagreements
 > and logged undercurrents. Untaken paths still leave residue (ruins, refugees, grudges).
+
+## Key-moment storyboard (OPTIONAL — only if visualizing a pivotal scene)
+> 给关键剧情/质变时刻分镜。继承 `12-visual-style.md`。一行一个 beat。
+| # | 景别 (WS/MS/CU/POV) | 画面 (看到什么 + 动作) | 对白/旁白 | 时长 | 角度/运镜/转场 (可选) |
+|---|---------------------|------------------------|-----------|------|------------------------|
+| 1 | | | | | |
+| 2 | | | | | |
+
+> 每个 beat 的生成 prompt = `<圣经 §1 全局 style 后缀> + 本格画面英文描述`；
+> 复现同一角色/场景时引用其 Visual 区块的固定特征锚点。

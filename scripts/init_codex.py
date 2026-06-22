@@ -3,12 +3,13 @@
 init_codex.py — scaffold a worldbuilding codex folder from the bundled templates.
 
 Usage:
-    python init_codex.py "<world-name>" [target_dir] [--multiline]
+    python init_codex.py "<world-name>" [target_dir] [--multiline] [--visual]
 
 Creates  <target_dir>/worldbuilding/<world-slug>/  with the standard structure and seeds
 index/registry files from assets/templates/. Existing files are never overwritten.
 Pass --multiline to also scaffold the optional multi-worldline machinery
 (10-timeline-mechanics.md + 11-worldlines/) for time-travel / branching / loop worlds.
+Pass --visual to scaffold the optional visual-style bible (12-visual-style.md + assets/visuals/).
 """
 import os
 import re
@@ -51,6 +52,11 @@ MULTILINE_SEED = {
     "11-worldlines-tree.md": "11-worldlines/_tree.md",
 }
 
+# optional visual-design bible (only with --visual)
+VISUAL_SEED = {
+    "12-visual-style.md": "12-visual-style.md",
+}
+
 
 def slugify(name: str) -> str:
     s = name.strip().lower()
@@ -76,6 +82,7 @@ def main():
     world = args[0]
     target = args[1] if len(args) > 1 else os.getcwd()
     multiline = "--multiline" in flags
+    visual = "--visual" in flags
     global ROOT
     ROOT = os.path.join(target, "worldbuilding", slugify(world))
     os.makedirs(ROOT, exist_ok=True)
@@ -105,6 +112,17 @@ def main():
             except FileNotFoundError:
                 content = f"# {dest}\n"
             write_if_absent(os.path.join(ROOT, dest), content)
+
+    if visual:
+        for tpl_name, dest in VISUAL_SEED.items():
+            src = os.path.join(TPL, tpl_name)
+            try:
+                with open(src, encoding="utf-8") as f:
+                    content = f.read().replace("{{WORLD_NAME}}", world)
+            except FileNotFoundError:
+                content = f"# {dest}\n"
+            write_if_absent(os.path.join(ROOT, dest), content)
+        os.makedirs(os.path.join(ROOT, "assets", "visuals"), exist_ok=True)
 
     write_if_absent(
         os.path.join(ROOT, "CHANGELOG.md"),
