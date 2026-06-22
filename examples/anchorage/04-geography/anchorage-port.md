@@ -24,3 +24,21 @@
 
 ## How its name will change
 若港务垮台，"锚地"或被胜者改名以抹去其统治记忆（征服式改名，见 perspective-geography）。
+
+## Visual
+> 继承 `12-visual-style.md`。场景图先服务叙事功能与情绪，再谈细节。
+- **叙事功能**：世界的开场镜头——一眼说清"伟大工程脚下的市井"与垂直阶级。
+- **情绪一句话**：仰望时的渺小与潮湿的不安。
+- **景别**：宽幅建立镜头（wide establishing shot），自下而上仰视缆。
+- **时间 / 天气**：阴天清晨，海雾未散，毛毛细雨。
+- **光照**：高处缆与诊所的冷蓝漫射光，潮下作坊的零星暖灯——上冷下暖。
+- **Color script**：上层青灰冷调（70%）渐变到潮下锈褐暖污（向 §2 色板靠拢）。
+- **比例尺**：缆几乎无限上延、人如蝼蚁；用龙门吊、违章楼梯、晾衣绳做人体参照锚。
+- **关键地标 / 剪影**：垂直的系链钢索贯穿画面，缆脚违章建筑层叠如藤壶。
+- **参考 (reference)**：阴天港口、港口龙门吊、潮间带盐蚀（lighting/shape 桶，见圣经 §5）。
+- **生成 prompt**：`<圣经 §1 全局 style 后缀> + wide low-angle establishing shot of a humid
+  equatorial harbour city at overcast dawn, a colossal space-elevator tether rising endlessly into
+  haze, shanty structures stacked like barnacles at its foot, gantry cranes for scale, cold blue
+  light above and scattered warm workshop lamps below, light drizzle`
+- **产出图**：（暂无 / 待生成；放 `assets/visuals/anchorage-port/`）
+
