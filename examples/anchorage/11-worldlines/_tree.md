@@ -1,3 +1,12 @@
+---
+id: wl-alpha
+type: worldline
+name: "本线 The Standing Line"
+parent: null
+status: trunk
+fixed_points: ["丙七召回", "韦氏裁决", "第一次回声"]
+---
+
 # Worldlines — Tree
 
 > 多元宇宙的形状。见 `references/multi-worldline.md`。

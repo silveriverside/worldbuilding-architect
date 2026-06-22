@@ -1,3 +1,13 @@
+---
+id: era-01
+type: era
+name: "系链时代 The Tether Years"
+order: 1
+span_start: "+0"
+span_end: "+40"
+tipping_points: ["丙七召回"]
+---
+
 # Era 01 — 系链时代 The Tether Years（约 +0–40 年）
 
 ## Feel of the age

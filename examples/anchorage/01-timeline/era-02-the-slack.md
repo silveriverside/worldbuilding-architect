@@ -1,3 +1,13 @@
+---
+id: era-02
+type: era
+name: "退线纪 The Slack"
+order: 2
+span_start: "+40"
+span_end: "+95"
+tipping_points: ["韦氏裁决", "走样的发现"]
+---
+
 # Era 02 — 退线纪 The Slack（约 +40–95 年）
 
 ## Feel of the age

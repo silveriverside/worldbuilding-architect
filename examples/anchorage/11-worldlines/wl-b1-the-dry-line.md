@@ -1,3 +1,14 @@
+---
+id: wl-b1
+type: worldline
+name: "干线 The Dry Line"
+parent: wl-alpha
+diverge_at: "+80"
+diverge_trigger: "韦氏裁决判副本非人"
+converges: "第一次回声"
+status: live
+---
+
 # Worldline WL-β1 — 干线 The Dry Line
 
 > 一份对 **WL-α（本线）** 的 DIFF。读"主干设定 + 本补丁"才是这条线的真相。

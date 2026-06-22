@@ -1,3 +1,14 @@
+---
+id: wl-b2
+type: worldline
+name: "静线 The Long Quiet"
+parent: wl-alpha
+diverge_at: "+110"
+diverge_trigger: "港务压下首份回声证据 / Mira 签下非本人认证"
+converges: "第一次回声"
+status: live
+---
+
 # Worldline WL-β2 — 静线 The Long Quiet
 
 > 一份对 **WL-α（本线）** 的 DIFF。读"主干设定 + 本补丁"才是这条线的真相。

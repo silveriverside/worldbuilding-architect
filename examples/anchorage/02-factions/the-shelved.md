@@ -1,3 +1,13 @@
+---
+id: the-shelved
+type: faction
+name: "搁架众 The Shelved"
+born_from: "韦氏裁决"
+rivals: ["the-grounders"]
+sponsor: "港务"
+splits_risk: "暗流③（原体清除翼）"
+---
+
 # Faction — 搁架众 The Shelved
 
 > 名字来历：本是"被搁架"（getting shelved，强制意识封存）的受害者蔑称，他们反过来戴上它当旗号——就像"布尔什维克"本只是"多数派"、"Tory"本是骂人话。见 `08-naming-lexicon.md`。

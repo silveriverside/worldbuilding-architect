@@ -1,3 +1,13 @@
+---
+id: the-grounders
+type: faction
+name: "落地党 The Grounders"
+born_from: "韦氏裁决"
+rivals: ["the-shelved"]
+sponsor: "义体行会"
+splits_risk: "删除副本是否谋杀（强硬派 vs 温和派）"
+---
+
 # Faction — 落地党 The Grounders
 
 > 名字来历：媒体随口起的——坚持"脚踩实地、肉身才是人"的那群人，被报纸叫作 the Grounders（落地的人）。不是自封的纲领，是外人贴的标签，后来叫顺了。见 `08-naming-lexicon.md`。

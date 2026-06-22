@@ -1,3 +1,16 @@
+---
+id: mira-okonkwo
+type: character
+name: "Mira Okonkwo"
+affiliation: ["搁架众", "落地党"]
+relations:
+  - to: silas-quist
+    type: 对手
+  - to: 港务
+    type: 任职
+lines: ["认证(明线)", "牧人(暗线)"]
+---
+
 # Character — Mira Okonkwo
 
 > 命名：缆脚劳工家庭出身，名字朴素；姓氏沿用移民祖辈，未按港务功能码改名——一个小小的"不肯被编号"的姿态。

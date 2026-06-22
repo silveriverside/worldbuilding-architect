@@ -1,3 +1,16 @@
+---
+id: silas-quist
+type: character
+name: "Silas Quist"
+affiliation: ["落地党"]
+relations:
+  - to: mira-okonkwo
+    type: 对手
+  - to: 潮下作坊
+    type: 出身
+lines: ["潮下(支线)"]
+---
+
 # Character — Silas Quist
 
 > 命名：潮下作坊出身，"Quist"是祖上一个固件作坊的招牌名，后来成了他的姓——品牌→人名的小例子。
