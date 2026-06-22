@@ -127,6 +127,19 @@ gitGraph
    checkout main
 ```
 
+## 设定集的视觉层（先定全局风格，再画局部）
+
+设定集不会只有纯文字。视觉层用和建世界一样的逻辑——**先全局后局部**：先立一份[视觉圣经](examples/anchorage/12-visual-style.md)（统一画风锚、色板、形状语言、世界逻辑、参考体系、生成锚点），再让每个角色/场景/物件/关键剧情继承它，写出自己的 `Visual` 区块（取概念设计行业的核心字段）。这样多张图风格不打架、同一角色跨图可辨认（visual consistency）。
+
+图从哪来，**先问你、不替你做主**（尊重偏好，包括讨厌 AI 生图的人）：
+
+- **(a) 你自己提供设定图** → skill 只负责组织、引用、保持风格一致
+- **(b) 暂不需要图** → 留好 brief 和占位
+- **(c) 只帮你找参考图（不生成）** → 给网络参考图链接，对齐调性、参照冷门物件（动物 / 矿石 / 古勘舆图 / 服饰形制 / 官衔标志 / 兵器…）
+- **(d) 用模型生成** → 你选了才生成
+
+默认产物是**纯文本的"生成 prompt + 参考链接"**（零依赖）；只有当 Agent 本身具备生图能力且你选择生成时才出图，否则诚实降级、绝不假装能画。样例见锚地的 [Mira 角色](examples/anchorage/06-characters/mira-okonkwo.md) 与 [锚地港场景](examples/anchorage/04-geography/anchorage-port.md) 的 `Visual` 区块。
+
 ## 它和同类有什么不同
 
 | 维度 | 常见做法（模板填空 / 一致性检查类） | Worldbuilding Architect |
@@ -161,7 +174,7 @@ worldbuilding-architect/
 │   ├── scifi-toolkit.md         # 让重科幻元素落地（上传 / 义体 / 方舟…）
 │   ├── deep-extrapolation.md    # "然后呢？"引擎：效应阶梯 + 利益相关者格阵
 │   └── multi-worldline.md       # 时间旅行 / 分支 / 收束 / 周目 / 超时空通讯
-├── assets/templates/        # 每类文件的模板（写新文件前先读对应模板）
+├── assets/templates/        # 每类文件的模板（含 12-visual-style 视觉圣经；写新文件前先读）
 ├── scripts/
 │   ├── init_codex.py        # 一键脚手架一座 codex（支持 --multiline）
 │   ├── build_views.py       # 从 codex front-matter 自动生成视图（Mermaid + 交互 HTML）

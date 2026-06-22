@@ -152,6 +152,41 @@ This writes two products from the same source, so the user picks whatever fits �
 won't appear in the diagrams until you add the front-matter. Re-run after editing the world to resync.
 The skeleton is optional — a world that doesn't want generated views can ignore all of this.
 
+## Visual design (art for the setting: characters, places, props, key scenes)
+
+A setting bible is rarely text-only. This layer adds visual design the same way the world is built:
+**global first, then local** — define one visual language, then derive every picture from it so styles
+never clash. All of it is OPTIONAL; a text-only world ignores it.
+
+**1. Set the global visual language first.** Scaffold `12-visual-style.md` (template in `assets/templates/`)
+and fill its six load-bearing sections: art style anchor, color palette, shape language, world logic,
+reference buckets, and a reusable prompt anchor. This is the visual counterpart of the naming lexicon —
+the single source every image inherits.
+
+**2. Then give entities a `Visual` block.** The character / place / tech / storyline templates each carry
+an optional `Visual` section with only its core fields (identity anchors & signature outfit for
+characters; mood & shot & color-script for places; function & materials & wear for props; a beat table
+for key scenes). Each block's generation prompt is `global style anchor (§1) + this entity's fixed
+features`, so the same character stays recognizable across images (visual consistency).
+
+**3. Triage image sourcing BEFORE producing anything — ask the user, don't assume.** Different creators
+want very different things; some value hand-drawn art and dislike AI images. Offer four neutral options:
+- **(a) I'll provide the art** → the skill only organizes, references, and keeps styles consistent.
+- **(b) No images for now** → keep the brief and a placeholder; nothing is generated.
+- **(c) Just find reference images** (not generate) → gather real reference *URLs* to align on tone and
+  to study uncommon things (an unusual animal, a mineral, an old map, costume/rank insignia, weapons).
+- **(d) Generate art with a model** → only if the user opts in.
+
+Alignment sub-flow: if the user's description is sparse, first pull a few reference images and confirm
+"is this the vibe?" before going further; if they already gave a style reference, skip that.
+
+**4. Image generation is capability-probed, with graceful fallback.** Default output is text:
+a ready-to-paste prompt + reference URLs. If the running Agent actually has an image-generation tool/route
+and the user chose (d), generate and save under `assets/visuals/<entity>/`. If no such capability exists,
+**do not pretend to draw** — fall back to the prompt + references and say so plainly (this is a known,
+fixable limitation, not normal operation). Keep the skill zero/low-dependency: generation is an optional
+enhancement, never a hard requirement.
+
 ## Workflow
 
 You'll usually be in one of two modes: **founding** a new world or **expanding** an existing one.
