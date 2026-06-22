@@ -123,6 +123,35 @@ lexicon in the same pass, and append a line to `CHANGELOG.md`.
 Templates for each file type are in `assets/templates/`. Read the relevant template before writing
 a new file of that type.
 
+## Generated views (timeline, worldline tree, faction & character maps)
+
+The codex text is the single source of truth; visual diagrams are *derived* from it, never hand-drawn
+(hand-maintained diagrams drift out of sync). To make structure visible, add a tiny machine-readable
+**front-matter skeleton** to the entities that feed diagrams, then run the generator.
+
+**1. Add the skeleton** (a small YAML block at the very top of the file; narrative stays in the body).
+Only four kinds of file need it, and only a few fields each — see the templates for the exact shape:
+- eras (`01-timeline/era-*.md`): `type: era`, `order`, `span_start/end`, `tipping_points`
+- factions (`02-factions/*.md`): `type: faction`, `born_from`, `rivals`, `sponsor`, `splits_risk`
+- characters (`06-characters/*.md`): `type: character`, `affiliation`, `relations: [{to, type}]`
+- worldlines (`11-worldlines/*.md`): `type: worldline`, `parent`, `diverge_at`, `converges`, `status`
+  (the trunk line is declared in `11-worldlines/_tree.md` with `status: trunk`)
+
+**2. Generate** into `<codex>/_views/`:
+```
+python scripts/build_views.py <codex-dir> --title "World Name"
+```
+This writes two products from the same source, so the user picks whatever fits — no lock-in to one tool:
+- `_views/views.md` — Mermaid diagrams (gitGraph worldline tree, timeline, faction/character graphs);
+  renders natively in Obsidian and most Markdown readers.
+- `_views/index.html` — a single self-contained page (data inlined, zero dependencies); open by
+  double-click for pan / zoom / click-to-inspect, no server or Obsidian needed.
+- `_views/_build_report.md` — what was rendered **and** any files missing their skeleton.
+
+**3. Read the build report.** Files lacking a skeleton are listed as *fixable gaps* (not normal): they
+won't appear in the diagrams until you add the front-matter. Re-run after editing the world to resync.
+The skeleton is optional — a world that doesn't want generated views can ignore all of this.
+
 ## Workflow
 
 You'll usually be in one of two modes: **founding** a new world or **expanding** an existing one.

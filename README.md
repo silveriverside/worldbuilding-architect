@@ -96,6 +96,37 @@ npx skills add silveriverside/worldbuilding-architect
 
 产物是**纯文本 Markdown codex**（可直接进 Obsidian / git），整套样例见 [examples/anchorage/](examples/anchorage/) 的 24 个文件。
 
+## 让结构看得见（自动生成的视图）
+
+文本是唯一真相源，图表从它**自动派生、绝不手写**（手画的图迟早和正文失同步）。给时代 / 派系 / 角色 / 世界线加一小段机器可读的 front-matter 骨架，跑一条命令：
+
+```bash
+python scripts/build_views.py examples/anchorage --title "锚地 Anchorage"
+```
+
+一个源头、两种产物，按需取用，不绑定任何工具：
+
+- **Mermaid 图**（`_views/views.md`）：世界线树用 `gitGraph`——分支即分叉、汇合即**世界线收束**；时代主轴用 `timeline`；派系/人物用关系图。在 Obsidian 和多数 Markdown 阅读器里原生渲染。
+- **单文件交互 HTML**（`_views/index.html`）：数据内联、零依赖，**双击即开**，可拖拽 / 缩放 / 点击查看详情，不需要服务器或 Obsidian。给不用 Obsidian 的人。
+- **构建报告**（`_views/_build_report.md`）：画了什么，以及**哪些文件缺骨架没画进去**（列为待修项，不静默忽略）。
+
+锚地的成品视图已入库：[examples/anchorage/_views/](examples/anchorage/_views/)。下面是它的世界线树（α 本线分叉出 β1 干线 / β2 静线，最终都向「第一次回声」收束）：
+
+```mermaid
+gitGraph
+   commit id: "trunk: 本线"
+   branch wl-b1
+   checkout wl-b1
+   commit id: "干线 @+80"
+   commit id: "converge: 第一次回声"
+   checkout main
+   branch wl-b2
+   checkout wl-b2
+   commit id: "静线 @+110"
+   commit id: "converge: 第一次回声"
+   checkout main
+```
+
 ## 它和同类有什么不同
 
 | 维度 | 常见做法（模板填空 / 一致性检查类） | Worldbuilding Architect |
@@ -131,8 +162,11 @@ worldbuilding-architect/
 │   ├── deep-extrapolation.md    # "然后呢？"引擎：效应阶梯 + 利益相关者格阵
 │   └── multi-worldline.md       # 时间旅行 / 分支 / 收束 / 周目 / 超时空通讯
 ├── assets/templates/        # 每类文件的模板（写新文件前先读对应模板）
-├── scripts/init_codex.py    # 一键脚手架一座 codex（支持 --multiline）
-└── examples/anchorage/      # 真实产物示例：科幻世界《锚地》全套 24 个文件
+├── scripts/
+│   ├── init_codex.py        # 一键脚手架一座 codex（支持 --multiline）
+│   ├── build_views.py       # 从 codex front-matter 自动生成视图（Mermaid + 交互 HTML）
+│   └── viewbuild/           # 生成器模块（零依赖：解析 / Mermaid / HTML / 报告）
+└── examples/anchorage/      # 真实产物示例：科幻世界《锚地》+ 自动生成的 _views/
 ```
 
 ## 验证与测试
